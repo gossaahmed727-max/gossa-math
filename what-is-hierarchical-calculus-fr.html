@@ -1,0 +1,252 @@
+<!-- File: what-is-hierarchical-calculus-fr.html -->
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+  <title>Qu’est-ce que le Calcul Hiérarchique ? — D0, D1, D2 (Hierarchical Calculus)</title>
+  <meta name="description" content="Définition claire du Calcul Hiérarchique : dérivées par rangs (D0, D1, D2…), intuition, formules essentielles et pourquoi cela simplifie les phénomènes multi-échelles et certaines équations difficiles." />
+
+  <!-- hreflang (edit Arabic URL if you use -ar.html) -->
+  <link rel="alternate" hreflang="en" href="https://gossaahmed.github.io/gossa-math/what-is-hierarchical-calculus-en.html">
+  <link rel="alternate" hreflang="ar" href="https://gossaahmed.github.io/gossa-math/what-is-hierarchical-calculus.html">
+  <link rel="alternate" hreflang="fr" href="https://gossaahmed.github.io/gossa-math/what-is-hierarchical-calculus-fr.html">
+  <link rel="alternate" hreflang="x-default" href="https://gossaahmed.github.io/gossa-math/what-is-hierarchical-calculus-en.html">
+
+  <meta name="robots" content="index,follow" />
+
+  <style>
+    :root{
+      --bg:#0b0d12; --card:#0f1420; --text:#e9eef7; --muted:#a9b3c7;
+      --link:#7dd3fc; --line:rgba(255,255,255,.10); --hl:rgba(125,211,252,.18);
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+    }
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.7;}
+    a{color:var(--link);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:22px 16px 64px;}
+    header{border-bottom:1px solid var(--line);padding:14px 0 18px;margin-bottom:18px;}
+    .topbar{display:flex;gap:12px;justify-content:space-between;align-items:center;flex-wrap:wrap}
+    .brand{font-weight:700;letter-spacing:.2px}
+    .langs{font-size:14px;color:var(--muted)}
+    .langs a{padding:6px 10px;border:1px solid var(--line);border-radius:10px;margin-left:6px;display:inline-block}
+    .langs a[aria-current="page"]{background:var(--hl);border-color:rgba(125,211,252,.35)}
+    h1{font-size:32px;margin:12px 0 8px}
+    .subtitle{color:var(--muted);max-width:85ch}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 16px;margin:16px 0}
+    .kicker{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em}
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .col6{grid-column:span 6}
+    .col12{grid-column:span 12}
+    @media (max-width:820px){.col6{grid-column:span 12}}
+    code,pre{font-family:var(--mono)}
+    pre{background:#0a0f1a;border:1px solid var(--line);border-radius:12px;padding:14px;overflow:auto}
+    .note{color:var(--muted);font-size:14px}
+    .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:4px 10px;font-size:13px;color:var(--muted);margin:4px 6px 0 0}
+    .toc a{display:block;padding:6px 0;color:var(--text)}
+    .toc a span{color:var(--muted);font-size:13px}
+    .hr{height:1px;background:var(--line);margin:18px 0}
+    footer{margin-top:42px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+    .math{font-family:var(--mono);background:rgba(255,255,255,.04);border:1px solid var(--line);padding:2px 6px;border-radius:8px}
+    .bigmath{font-family:var(--mono);font-size:16px;background:rgba(255,255,255,.04);border:1px solid var(--line);padding:10px 12px;border-radius:12px;display:block}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="topbar">
+        <div class="brand">GOSSA · gossa-math</div>
+        <nav class="langs" aria-label="Langues">
+          <span>Langue :</span>
+          <a href="what-is-hierarchical-calculus-en.html">English</a>
+          <a href="what-is-hierarchical-calculus.html">العربية</a>
+          <a href="what-is-hierarchical-calculus-fr.html" aria-current="page">Français</a>
+        </nav>
+      </div>
+
+      <h1>Qu’est-ce que le <span class="math">Calcul Hiérarchique</span> ?</h1>
+
+      <p class="subtitle">
+        Le calcul classique utilise une seule dérivée <span class="math">df/dx</span>.
+        Le <b>Calcul Hiérarchique</b> propose une idée simple :
+        <b>changer le rang de dérivation</b> pour mesurer le changement autrement.
+        On passe du changement absolu (D0) au changement relatif (D1),
+        puis à des rangs supérieurs (D2, D3...) adaptés aux phénomènes multi-échelles.
+      </p>
+
+      <div>
+        <span class="pill">D0 : classique</span>
+        <span class="pill">D1 : relatif (log-log)</span>
+        <span class="pill">D2 : relatif de relatif</span>
+        <span class="pill">Multi-échelles</span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <div class="card col6">
+        <div class="kicker">Sommaire</div>
+        <div class="toc">
+          <a href="#definition">1) Définition</a>
+          <a href="#special">2) Rangs spéciaux (D0 → D2)</a>
+          <a href="#meaning">3) Que mesure chaque rang ?</a>
+          <a href="#example">4) Exemple clé : loi de puissance</a>
+          <a href="#why">5) Pourquoi ça aide ?</a>
+          <a href="#links">6) Pages liées</a>
+        </div>
+      </div>
+
+      <div class="card col6">
+        <div class="kicker">Résumé en une phrase</div>
+        <p>
+          Le Calcul Hiérarchique est une manière d’écrire des dérivées où l’on choisit un rang
+          qui rend le problème plus clair :
+          <b>absolu</b> (D0) ou <b>relatif</b> (D1), puis des rangs supérieurs (D2…).
+        </p>
+        <p class="note">
+          Ce n’est pas “un autre calcul” juste pour changer le nom :
+          c’est un outil pour comprendre la structure d’une équation et parfois la simplifier.
+        </p>
+      </div>
+    </section>
+
+    <section id="definition" class="card">
+      <div class="kicker">1) Définition</div>
+      <p>
+        Le <b>Calcul Hiérarchique</b> (Hierarchical Calculus) introduit une hiérarchie de dérivées.
+        Au lieu de rester bloqué sur <span class="math">df/dx</span>, on définit des rangs :
+        <span class="math">D0</span>, <span class="math">D1</span>, <span class="math">D2</span>...
+        Chaque rang correspond à une façon différente de mesurer la variation.
+      </p>
+    </section>
+
+    <section id="special" class="card">
+      <div class="kicker">2) Rangs spéciaux (comme dans tes pages EN/AR)</div>
+
+      <p class="note">
+        Voici les rangs fondamentaux dans la forme la plus directe :
+      </p>
+
+      <div class="bigmath">D<sub>0</sub><sup>1</sup> f(x) = <span class="math">df(x) / dx</span></div>
+      <br>
+
+      <div class="bigmath">D<sub>1</sub><sup>1</sup> f(x) = <span class="math">d ln(f(x)) / d ln(x)</span></div>
+      <br>
+
+      <div class="bigmath">D<sub>2</sub><sup>1</sup> f(x) = <span class="math">d ln(ln(f(x))) / d ln(ln(x))</span></div>
+
+      <div class="hr"></div>
+
+      <p>
+        Ici, le rang <span class="math">D1</span> est le <b>rang relatif</b> :
+        on ne dérive pas seulement <span class="math">f(x)</span> par rapport à <span class="math">x</span>,
+        on dérive <b>en échelle logarithmique</b>.
+      </p>
+    </section>
+
+    <section id="meaning" class="card">
+      <div class="kicker">3) Que mesure chaque rang ?</div>
+
+      <h3>D0 — Le changement absolu</h3>
+      <p>
+        <span class="math">D0</span> est la dérivée classique.
+        Elle mesure le changement en unités directes :
+        combien <span class="math">f(x)</span> change quand <span class="math">x</span> change.
+      </p>
+
+      <h3>D1 — Le changement relatif (log-log)</h3>
+      <p>
+        <span class="math">D1</span> est la dérivée relative :
+        elle mesure la variation de <span class="math">f(x)</span> par rapport à la variation de <span class="math">x</span>
+        <b>en proportion</b>, et non en valeur absolue.
+      </p>
+      <pre><code>D1 f(x) = d ln(f(x)) / d ln(x)</code></pre>
+
+      <p class="note">
+        C’est exactement ce qui apparaît naturellement quand on travaille avec des lois de puissance,
+        des phénomènes auto-similaires, ou des systèmes multi-échelles.
+      </p>
+
+      <h3>D2 — Le rang supérieur (relative de relative)</h3>
+      <p>
+        <span class="math">D2</span> pousse l’idée plus loin :
+        on dérive encore en échelle, mais sur un niveau supérieur
+        (logarithme du logarithme).
+      </p>
+      <pre><code>D2 f(x) = d ln(ln(f(x))) / d ln(ln(x))</code></pre>
+    </section>
+
+    <section id="example" class="card">
+      <div class="kicker">4) Exemple clé : la loi de puissance</div>
+
+      <p>
+        Prenons un exemple très simple mais très important :
+      </p>
+
+      <pre><code>f(x) = x^a</code></pre>
+
+      <p>
+        En dérivée classique (D0) :
+      </p>
+      <pre><code>D0 f(x) = a x^(a-1)</code></pre>
+
+      <p>
+        En dérivée relative (D1) :
+      </p>
+      <pre><code>D1 f(x) = a</code></pre>
+
+      <p class="note">
+        Voilà l’idée : en D1, la structure devient immédiate.
+        Le rang relatif “voit” directement l’exposant <span class="math">a</span>.
+      </p>
+    </section>
+
+    <section id="why" class="card">
+      <div class="kicker">5) Pourquoi ça aide ?</div>
+
+      <p>
+        Beaucoup de problèmes ne vivent pas dans l’absolu mais dans le relatif :
+        les rapports, les échelles, les puissances, les transitions multi-échelles.
+        Dans ces cas, rester en <span class="math">D0</span> peut masquer la structure.
+      </p>
+
+      <ul>
+        <li>Le rang relatif peut rendre une équation plus simple.</li>
+        <li>Il peut rendre un modèle plus lisible (lois de puissance).</li>
+        <li>Il peut mieux suivre les phénomènes multi-échelles.</li>
+      </ul>
+
+      <p class="note">
+        Le calcul hiérarchique n’est pas là pour remplacer tout le calcul classique,
+        mais pour donner un choix de rang quand le classique n’est pas la meilleure lecture.
+      </p>
+    </section>
+
+    <section id="links" class="card">
+      <div class="kicker">6) Pages liées</div>
+      <ul>
+        <li><a href="hierarchical-calculus-en.html">Hierarchical Calculus (EN)</a> / <a href="hierarchical-calculus.html">Default</a></li>
+        <li><a href="hierarchical-derivative-explained-en.html">Hierarchical Derivative Explained (EN)</a> / <a href="hierarchical-derivative-explained.html">Default</a></li>
+        <li><a href="rank-and-degree-explained-en.html">Rank & Degree Explained (EN)</a> / <a href="rank-and-degree-explained.html">Default</a></li>
+        <li><a href="hierarchical-calculus-beginners-guide-en.html">Beginner Guide (EN)</a> / <a href="hierarchical-calculus-beginners-guide.html">Default</a></li>
+        <li><a href="why-some-differential-equations-unsolvable-en.html">Why some DE are unsolvable? (EN)</a> / <a href="why-some-differential-equations-unsolvable.html">Default</a></li>
+      </ul>
+
+      <div class="hr"></div>
+      <p class="note">
+        Si tu veux, je prépare ensuite la page FR la plus utile pour les recherches :
+        <b>what-does-a-derivative-measure-fr.html</b>.
+      </p>
+    </section>
+
+    <footer>
+      <div>© GOSSA — gossa-math · Version française</div>
+      <div class="note">
+        Conseil SEO : ajoute cette page dans <span class="math">sitemap.xml</span> ثم استعمل “Inspect URL” في Search Console.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
