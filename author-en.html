@@ -5,137 +5,141 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Academic & Professional Profile | Eng. Ahmed Gossa — Biskra, Algeria</title>
-  <meta name="description" content="Official profile of Eng. Ahmed Gossa: Licensed Civil Engineer and Independent Researcher in Advanced Mathematics. Developer of the Hierarchical Calculus framework." />
-  <meta name="keywords" content="Ahmed Gossa, Civil Engineer Biskra, Hierarchical Calculus, Proportional Calculus, Logarithmic Calculus, Structural Engineering Algeria" />
+  <meta name="description" content="Official academic and professional portfolio of Eng. Ahmed Gossa. Licensed Civil Engineer in Biskra and founder of the Hierarchical Calculus framework." />
   <meta name="author" content="Ahmed Gossa" />
-
+  
   <link rel="canonical" href="https://gossaahmed.github.io/gossa-math/author-en.html" />
-  <link rel="alternate" hreflang="en" href="https://gossaahmed.github.io/gossa-math/author-en.html" />
-  <link rel="alternate" hreflang="ar" href="https://gossaahmed.github.io/gossa-math/author-ar.html" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
 
   <style>
+    /* المتغيرات الأساسية للتصميم - CSS Variables */
     :root {
-      --bg-dark: #0a0f1d;
-      --bg-panel: #161e31;
-      --accent-teal: #39d3c3;
-      --accent-blue: #60a5fa;
+      --primary: #39d3c3; /* لون التركواز للباحث */
+      --secondary: #3b82f6; /* لون أزرق للهندسة */
+      --bg-dark: #080c17;
+      --bg-panel: #111a2e;
       --text-main: #f8fafc;
-      --text-muted: #94a3b8;
-      --border-color: rgba(255, 255, 255, 0.08);
-      --glass: rgba(255, 255, 255, 0.03);
-      --font-mono: 'Fira Code', 'Cascadia Code', monospace;
+      --text-dim: #94a3b8;
+      --border: rgba(255, 255, 255, 0.08);
+      --font-main: 'Plus Jakarta Sans', sans-serif;
+      --font-mono: 'Fira Code', monospace;
     }
 
+    /* تهيئة التصميم - Reset & Global Styles */
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: var(--bg-dark);
       color: var(--text-main);
-      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      font-family: var(--font-main);
       line-height: 1.8;
       overflow-x: hidden;
     }
 
-    /* Ambient Background Effect */
+    /* تأثيرات الخلفية - Ambient Background */
     body::before {
       content: ""; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-      background: radial-gradient(circle at 10% 10%, rgba(57, 211, 195, 0.07), transparent 70%),
-                  radial-gradient(circle at 90% 90%, rgba(96, 165, 250, 0.07), transparent 70%);
+      background: 
+        radial-gradient(circle at 10% 10%, rgba(57, 211, 195, 0.07), transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(59, 130, 246, 0.07), transparent 40%);
       z-index: -1;
     }
 
     .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
 
-    /* Top Navigation Bar */
-    .top-nav {
-      background: rgba(10, 15, 29, 0.8);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--border-color);
-      position: sticky; top: 0; z-index: 100;
-      padding: 15px 0;
+    /* قائمة التنقل العلوية - Header Nav */
+    .glass-nav {
+      position: sticky; top: 20px; z-index: 1000;
+      background: rgba(8, 12, 23, 0.85);
+      backdrop-filter: blur(15px);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 15px 35px;
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 50px;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.5);
     }
-    .nav-inner { max-width: 1200px; margin: 0 auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; }
-    .nav-links a { color: var(--text-main); text-decoration: none; margin-left: 20px; font-size: 0.9rem; transition: 0.3s; }
-    .nav-links a:hover { color: var(--accent-teal); }
+    .nav-brand { font-weight: 800; color: var(--primary); font-size: 1.1rem; letter-spacing: 1px; }
+    .nav-links a { color: var(--text-main); text-decoration: none; margin-left: 25px; font-size: 0.85rem; font-weight: 600; transition: 0.3s; }
+    .nav-links a:hover { color: var(--primary); }
 
-    /* Hero Section */
-    .hero-section {
+    /* قسم التعريف الرئيسي - Hero Section */
+    .hero {
       background: linear-gradient(145deg, var(--bg-panel), #1e293b);
-      border: 1px solid var(--border-color);
-      border-radius: 28px;
-      padding: 60px 45px;
-      display: flex;
-      align-items: center;
-      gap: 50px;
-      box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
-      margin-top: 20px;
-      margin-bottom: 40px;
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 80px 60px;
+      display: grid; grid-template-columns: 240px 1fr;
+      gap: 60px; align-items: center;
+      margin-bottom: 60px;
+      position: relative;
+      overflow: hidden;
     }
 
-    .hero-section img {
-      width: 190px; height: 190px; border-radius: 50%;
-      border: 5px solid var(--accent-teal);
+    .hero-img {
+      width: 240px; height: 240px; border-radius: 60px;
+      border: 3px solid var(--primary);
       object-fit: cover;
-      box-shadow: 0 0 40px rgba(57, 211, 195, 0.2);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+      transform: rotate(-3deg);
     }
 
-    .hero-text h1 { font-size: 2.8rem; letter-spacing: -1px; margin-bottom: 12px; color: #fff; }
-    .hero-text p { font-size: 1.2rem; color: var(--text-muted); max-width: 600px; }
+    .hero-content h1 { font-size: 3.5rem; letter-spacing: -2px; margin-bottom: 10px; line-height: 1.1; }
+    .hero-content .subtitle { color: var(--primary); font-family: var(--font-mono); font-size: 1rem; margin-bottom: 25px; display: block; }
+    
+    .status-badges { display: flex; gap: 12px; margin-bottom: 25px; flex-wrap: wrap; }
+    .status-badge { background: rgba(255,255,255,0.05); padding: 8px 20px; border-radius: 12px; font-size: 0.8rem; border: 1px solid var(--border); }
 
-    .badge-group { display: flex; gap: 15px; margin: 20px 0; flex-wrap: wrap; }
-    .badge { 
-      background: rgba(57, 211, 195, 0.1); border: 1px solid var(--accent-teal);
-      padding: 6px 18px; border-radius: 50px; font-size: 0.85rem; font-weight: 600; color: var(--accent-teal);
-    }
+    /* شبكة المحتوى - Main Grid Layout */
+    .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 40px; }
+    @media (max-width: 1050px) { .main-grid { grid-template-columns: 1fr; } }
 
-    /* Main Grid Layout */
-    .main-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 35px; }
-    @media (max-width: 950px) { .main-grid { grid-template-columns: 1fr; } }
-
-    .content-card {
+    .card {
       background: var(--bg-panel);
-      border: 1px solid var(--border-color);
-      border-radius: 24px;
-      padding: 40px;
-      margin-bottom: 35px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      padding: 50px;
+      margin-bottom: 40px;
       transition: transform 0.3s ease;
     }
-    .content-card:hover { transform: translateY(-5px); }
+    .card:hover { transform: translateY(-5px); }
 
-    h2 { font-size: 1.7rem; color: var(--accent-blue); margin-bottom: 25px; border-left: 4px solid var(--accent-teal); padding-left: 15px; }
+    h2 { font-size: 1.8rem; color: var(--secondary); margin-bottom: 30px; display: flex; align-items: center; gap: 20px; }
+    h2::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
-    /* Scientific Timeline */
-    .timeline { position: relative; padding-left: 25px; border-left: 2px solid var(--border-color); }
-    .timeline-item { margin-bottom: 45px; position: relative; }
-    .timeline-year { 
-      background: var(--accent-teal); color: #000; font-weight: 800; 
-      padding: 3px 15px; border-radius: 8px; display: inline-block; margin-bottom: 12px;
+    /* الجدول الزمني العلمي - Scientific Timeline */
+    .timeline { border-left: 2px solid var(--primary); padding-left: 30px; margin-left: 10px; }
+    .timeline-item { margin-bottom: 60px; position: relative; }
+    .timeline-item::before { 
+      content: ""; position: absolute; left: -41px; top: 5px; width: 20px; height: 20px; 
+      background: var(--bg-dark); border: 3px solid var(--primary); border-radius: 50%;
     }
-
-    /* Technical Blocks */
+    .year { font-weight: 800; color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 10px; }
+    
+    /* صناديق الكود والرياضيات - Tech Blocks */
     .math-block {
-      background: #000; color: #34d399; font-family: var(--font-mono);
-      padding: 25px; border-radius: 15px; margin: 20px 0; direction: ltr;
-      border: 1px solid rgba(57, 211, 195, 0.3); overflow-x: auto;
+      background: #000; color: #4ade80; font-family: var(--font-mono);
+      padding: 25px; border-radius: 15px; margin: 20px 0; border: 1px solid rgba(57, 211, 195, 0.2);
+      direction: ltr; overflow-x: auto; font-size: 0.95rem; line-height: 1.6;
     }
 
-    .bibtex-code {
-      background: #0f172a; color: #94a3b8; font-family: var(--font-mono);
-      padding: 20px; border-radius: 12px; font-size: 0.8rem; white-space: pre;
-      overflow-x: auto; border: 1px solid var(--border-color); line-height: 1.5;
-    }
+    .expertise-list { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 25px; }
+    .exp-item { background: rgba(255,255,255,0.03); padding: 20px; border-radius: 15px; border-right: 4px solid var(--secondary); font-size: 0.9rem; }
 
-    /* Professional Skills */
-    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-    .skill-item { background: rgba(255,255,255,0.03); padding: 12px; border-radius: 10px; border: 1px solid var(--border-color); font-size: 0.9rem; }
-
+    /* تذييل الصفحة - Footer */
     footer {
-      text-align: center; padding: 70px 0; border-top: 1px solid var(--border-color);
-      color: var(--text-muted); font-size: 0.9rem;
+      text-align: center; padding: 100px 0; border-top: 1px solid var(--border);
+      color: var(--text-dim); font-size: 0.9rem;
     }
 
-    ul { list-style: none; }
-    li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-    li::before { content: "▹"; position: absolute; left: 0; color: var(--accent-teal); }
+    /* بيانات الاقتباس - BibTeX Section */
+    .bibtex-box {
+      background: #020617; color: var(--text-dim); font-family: var(--font-mono);
+      padding: 25px; border-radius: 15px; font-size: 0.8rem; border: 1px dashed var(--secondary);
+      direction: ltr; white-space: pre-wrap; margin-top: 20px;
+    }
   </style>
 
   <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -143,127 +147,126 @@
 
 <body>
 
-<nav class="top-nav">
-  <div class="nav-inner">
-    <div style="font-weight: 800; letter-spacing: 1px; color: var(--accent-teal);">GOSSA MATH</div>
+<div class="container">
+  
+  <nav class="glass-nav">
+    <div class="nav-brand">GOSSA.MATH</div>
     <div class="nav-links">
       <a href="index-en.html">Home</a>
       <a href="theory-en.html">Theory</a>
       <a href="author-ar.html">العربية</a>
     </div>
-  </div>
-</nav>
+  </nav>
 
-<div class="container">
-  
-  <header class="hero-section">
-    <img src="assets/images/ahmed-gossa.jpg" alt="Eng. Ahmed Gossa">
-    <div class="hero-text">
-      <h1>Eng. Ahmed Gossa</h1>
-      <div class="badge-group">
-        <span class="badge">Civil Engineer (Licensed)</span>
-        <span class="badge">Mathematical Researcher</span>
-        <span class="badge">Biskra, Algeria</span>
+  <header class="hero">
+    <img src="assets/images/ahmed-gossa.jpg" alt="Eng. Ahmed Gossa" class="hero-img">
+    <div class="hero-content">
+      <span class="subtitle">// ACADEMIC PROFILE & IDENTITY</span>
+      <h1>Ahmed Gossa</h1>
+      <div class="status-badges">
+        <span class="status-badge">Licensed Civil Engineer</span>
+        <span class="status-badge">Theoretical Researcher</span>
+        <span class="status-badge">Biskra, Algeria</span>
       </div>
-      <p>Independent Researcher specializing in the unification of change languages through <strong>Hierarchical Calculus</strong>.</p>
+      <p style="font-size: 1.15rem; color: var(--text-dim); max-width: 700px;">
+        Independent researcher dedicated to the unification of differential languages through the <span style="color: var(--primary); font-weight: 600;">Hierarchical Calculus</span> framework.
+      </p>
     </div>
   </header>
 
   <div class="main-grid">
     
     <main>
-      <section class="content-card">
+      <section class="card">
         <h2>Professional Background</h2>
         <p>
-          Eng. Ahmed Gossa is a licensed <strong>Civil Engineer</strong> accredited by the Algerian Ministry of Housing, Urban Planning and the City. 
-          Based in the province of <strong>Biskra</strong> (Bentious, M'khadma), his professional practice involves structural analysis and complex infrastructure design.
+          Eng. Ahmed Gossa is a senior <strong>Civil Engineer</strong> officially accredited by the Algerian Ministry of Housing, Urban Planning and the City. 
+          Practicing in the province of <strong>Biskra</strong> (Bentious, M'khadma), his work encompasses structural stability analysis, seismic design, and urban infrastructure projects.
         </p>
-        <p style="margin-top: 15px;">
-          His unique dual path integrates rigorous engineering methodology with high-level mathematical theory, leading to the development of a structured framework for measuring multi-order change.
+        <p style="margin-top: 25px;">
+          His unique trajectory combines practical engineering methodologies with high-level mathematical abstractions. 
+          By bridging these two worlds, he has developed innovative ways to measure multi-order change in complex systems.
         </p>
       </section>
 
-      <section class="content-card">
-        <h2>Scientific Timeline & Publications</h2>
+      <section class="card">
+        <h2>Scientific Archive (History of Work)</h2>
         <div class="timeline">
           
           <div class="timeline-item">
-            <span class="timeline-year">2011</span>
-            <h3>Proportional Calculus</h3>
-            <p>Authored the foundational manuscript on relative differentiation, shifting the focus from absolute differences to proportional scaling.</p>
+            <span class="year">2011 — Proportional Calculus</span>
+            <p>Initial discovery of relative differentiation, where the derivative is redefined to measure proportional shifts rather than absolute increments.</p>
             <div class="math-block">
-              D[f(x)] = \lim_{h \to 1} \frac{f(x \cdot h)}{f(x)} \text{ (Conceptual Base)}
+              D_{p} f(x) = \frac{x}{f(x)} \cdot \frac{df}{dx}
             </div>
           </div>
 
           <div class="timeline-item">
-            <span class="timeline-year">2012</span>
-            <h3>Logarithmic Calculus</h3>
-            <p>Extended the theory to account for hierarchical growth in complex systems, where change occurs at logarithmic scales.</p>
-            <div class="math-box">
-              \[ D_{log} f(x) = \frac{d \ln f(x)}{d \ln x} \]
+            <span class="year">2012 — Logarithmic Calculus</span>
+            <p>Extended the research into higher-order tiers, providing the mathematical tools to analyze systems governed by logarithmic growth patterns.</p>
+            <div class="math-block">
+              \[ D_L f(x) = \frac{d (\ln f(x))}{d (\ln x)} \]
             </div>
           </div>
 
           <div class="timeline-item">
-            <span class="timeline-year">2025</span>
-            <h3>Hierarchical Calculus Framework</h3>
-            <p>Formally unified all previous works into a consistent Rank-Degree system, archived via Zenodo with global identifier <strong>DOI: 10.5281/zenodo.17917302</strong>.</p>
+            <span class="year">2025 — Hierarchical Unification</span>
+            <p>The formal publication of the <strong>Hierarchical Calculus</strong> framework, unifying all change languages into a consistent Rank-Degree system. DOI: 10.5281/zenodo.17917302.</p>
           </div>
 
         </div>
       </section>
 
-      <section class="content-card">
-        <h2>Engineering Core Competencies</h2>
-        <div class="skills-grid">
-          <div class="skill-item">Structural Design (RPA Codes)</div>
-          <div class="skill-item">Finite Element Analysis (FEA)</div>
-          <div class="skill-item">Advanced Numerical Methods</div>
-          <div class="skill-item">Seismic Stability Optimization</div>
+      <section class="card">
+        <h2>Engineering Core Expertise</h2>
+        <div class="expertise-list">
+          <div class="exp-item"><strong>Seismic Resistance</strong><br>Implementation of RPA (Algerian Seismic Code).</div>
+          <div class="exp-item"><strong>Structural Audit</strong><br>Analyzing structural integrity of complex buildings.</div>
+          <div class="exp-item"><strong>Advanced Modeling</strong><br>Using FEA and professional engineering software.</div>
+          <div class="exp-item"><strong>Project Management</strong><br>Leading infrastructure developments in Biskra.</div>
         </div>
       </section>
     </main>
 
     <aside>
-      <section class="content-card">
-        <h3>Contact Details</h3>
-        <ul style="margin-top: 20px; font-size: 0.95rem;">
-          <li><strong>Location:</strong> Bentious, M'khadma, Biskra, DZ</li>
-          <li><strong>Email:</strong> ahmedgossa50@gmail.com</li>
-          <li><strong>GitHub:</strong> <a href="https://github.com/GOSSAAHMED">GOSSAAHMED</a></li>
+      <div class="card" style="padding: 35px;">
+        <h3>Official Liaison</h3>
+        <ul style="list-style: none; margin-top: 20px; font-size: 0.9rem;">
+          <li style="margin-bottom: 15px;"><strong>Email:</strong><br>ahmedgossa50@gmail.com</li>
+          <li style="margin-bottom: 15px;"><strong>Location:</strong><br>Biskra, Algeria (Bentious)</li>
+          <li><strong>GitHub:</strong><br><a href="https://github.com/GOSSAAHMED" style="color:var(--primary); text-decoration:none;">@GOSSAAHMED</a></li>
         </ul>
-      </section>
+      </div>
 
-      <section class="content-card">
+      <div class="card" style="padding: 35px;">
         <h3>Academic Citation</h3>
-        <p class="small text-muted" style="margin-bottom: 15px;">Use the following BibTeX record for referencing:</p>
-        <div class="bibtex-code">
+        <p style="font-size: 0.8rem; color: var(--text-dim);">Use this BibTeX record for referencing the work:</p>
+        <div class="bibtex-box">
 @software{Gossa2025,
   author = {Gossa, Ahmed},
-  title = {Hierarchical Calculus},
+  title = {Hierarchical Calculus Framework},
   year = {2025},
   url = {https://gossaahmed.github.io/gossa-math/},
   doi = {10.5281/zenodo.17917302}
 }</div>
-      </section>
+      </div>
 
-      <section class="content-card" style="border-top: 4px solid var(--accent-blue);">
-        <h3>Research Focus</h3>
-        <p style="font-size: 0.85rem; color: var(--text-muted);">
-          Gossa's work aims to redefine how we calculate rates of change in non-linear environments, providing a bridge between pure mathematics and engineering applications.
+      <div class="card" style="border-top: 4px solid var(--secondary); padding: 35px;">
+        <h3>Identity Verification</h3>
+        <p style="font-size: 0.8rem; color: var(--text-dim);">
+          Professional accreditation verified by the Algerian Ministry of Works. Digital identity secured via GitHub and Zenodo.
         </p>
-      </section>
+      </div>
     </aside>
 
   </div>
 
   <footer>
-    <p>Official Author Page of Eng. Ahmed Gossa — © 2026</p>
-    <p style="font-size: 0.75rem; margin-top: 10px;">Biskra, Algeria | Hierarchical Calculus Project</p>
+    <p>© 2026 Eng. Ahmed Gossa — Licensed Civil Engineer & Researcher</p>
+    <p style="margin-top: 10px; font-size: 0.75rem; color: var(--primary);">Biskra, Algeria | Hierarchical Calculus Project</p>
   </footer>
 
 </div>
 
 </body>
-</html>
+</html>>
